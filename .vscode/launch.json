@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Launch .NET Core Console App",
             "program": "${workspaceFolder}/src/Console/bin/Debug/net8.0/src.dll",
-            "args": ["${workspaceFolder}/inputs/day1.txt"],
+            "args": ["${workspaceFolder}/inputs/day2.txt"],
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "requireExactSource": true
