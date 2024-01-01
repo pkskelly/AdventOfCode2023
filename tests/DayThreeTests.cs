@@ -45,13 +45,31 @@ namespace AdventOfCode2023.Tests
         }
 
         [TestMethod]
-        public void Grid_Should_Return_CorrectPartNumberSum()
+        public void SampleGrid_Should_Return_CorrectGearRatioSum()
+        {
+            //load sample file 
+            var filePath = "../../../../inputs/day3sample.txt";
+            var schematic = DayThreeProcessor.DeserializeGrid(filePath);
+            Assert.AreEqual(467835, schematic.GetGearRationSum());
+        }
+
+
+        [TestMethod]
+        public void ActualGrid_Should_Return_CorrectPartNumberSum()
         {
             //load sample file 
             var filePath = "../../../../inputs/day3.txt";
             var schematic = DayThreeProcessor.DeserializeGrid(filePath);
-
             Assert.AreEqual(512794, schematic.GetPartNumberSum());
+        }
+
+        [TestMethod]
+        public void ActualGrid_Should_Return_CorrectGearRatioSum()
+        {
+            //load sample file 
+            var filePath = "../../../../inputs/day3.txt";
+            var schematic = DayThreeProcessor.DeserializeGrid(filePath);
+            Assert.AreEqual(67779080, schematic.GetGearRationSum());
         }
 
     }

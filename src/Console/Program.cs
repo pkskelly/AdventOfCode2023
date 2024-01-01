@@ -62,14 +62,16 @@ namespace AdventOfCode2023.Console
 
         private static void DayThree(string filePath)
         {
-            var schematic = DayThreeProcessor.DeserializeGrid(filePath);
-            System.Console.WriteLine($"Game Grid = {schematic.Grid.Length}");
+            var schematic = Schematic.DeserializeGrid(filePath) ?? new Schematic();
+            System.Console.WriteLine($"Game Grid = {schematic.Grid?.Length}");
             //part 1    
             //sum of all of the part numbers in the engine schematic?
             var partNumberSum = schematic.GetPartNumberSum();
             System.Console.WriteLine($"Part Number Sum = {partNumberSum}");
             //part 2    
-         
+            //sum of all of the symbols gear rations in the engine schematic
+            var gearRatioSum = schematic.GetGearRationSum();
+            System.Console.WriteLine($"Gear Ratio Sum = {gearRatioSum}");
         }
     }
 
