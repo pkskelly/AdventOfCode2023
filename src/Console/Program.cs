@@ -28,6 +28,9 @@ namespace AdventOfCode2023.Console
                 case "2":
                     DayTwo(filePath);
                     break;
+                case "3":
+                    DayThree(filePath);
+                    break;
                 default:
                     System.Console.WriteLine("Please provide a valid day.");
                     break;
@@ -54,9 +57,22 @@ namespace AdventOfCode2023.Console
             System.Console.WriteLine($"Valid Game Sum = {validGameSum}");
             //part 2
             var validGamePowerSum = DayTwoProcessor.GetSumOfGamePowers(filePath);
-            System.Console.WriteLine($"Valid Game Sum = {validGamePowerSum}");
+            System.Console.WriteLine($"Game Power Sum = {validGamePowerSum}");
+        }
+
+        private static void DayThree(string filePath)
+        {
+            var schematic = Schematic.DeserializeGrid(filePath) ?? new Schematic();
+            System.Console.WriteLine($"Game Grid = {schematic.Grid?.Length}");
+            //part 1    
+            //sum of all of the part numbers in the engine schematic?
+            var partNumberSum = schematic.GetPartNumberSum();
+            System.Console.WriteLine($"Part Number Sum = {partNumberSum}");
+            //part 2    
+            //sum of all of the symbols gear rations in the engine schematic
+            var gearRatioSum = schematic.GetGearRationSum();
+            System.Console.WriteLine($"Gear Ratio Sum = {gearRatioSum}");
         }
     }
-
 
 }
