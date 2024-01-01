@@ -31,6 +31,9 @@ namespace AdventOfCode2023.Console
                 case "3":
                     DayThree(filePath);
                     break;
+                case "4":
+                    DayFour(filePath);
+                    break;
                 default:
                     System.Console.WriteLine("Please provide a valid day.");
                     break;
@@ -72,6 +75,16 @@ namespace AdventOfCode2023.Console
             //sum of all of the symbols gear rations in the engine schematic
             var gearRatioSum = schematic.GetGearRationSum();
             System.Console.WriteLine($"Gear Ratio Sum = {gearRatioSum}");
+        }
+
+         private static void DayFour(string filePath)
+        {
+            var lotteryTickets = LotteryTickets.DeserializeLotteryTickets(filePath);
+            //part 1    
+            var totalPoints = lotteryTickets.CalculateTotalPoints();
+            System.Console.WriteLine($" Lottery Tickets total points {totalPoints}");
+            //part 2
+            
         }
     }
 

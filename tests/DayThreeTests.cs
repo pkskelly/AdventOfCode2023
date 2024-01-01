@@ -11,7 +11,7 @@ namespace AdventOfCode2023.Tests
         {
             //load sample file 
             var filePath = "../../../../inputs/day3sample.txt";
-            var schematic = DayThreeProcessor.DeserializeGrid(filePath);
+            var schematic = Schematic.DeserializeGrid(filePath);
             Assert.AreEqual(100, schematic.Grid?.Length);
         }
 
@@ -20,7 +20,7 @@ namespace AdventOfCode2023.Tests
         {
             //load sample file 
             var filePath = "../../../../inputs/day3sample.txt";
-            var schematic = DayThreeProcessor.DeserializeGrid(filePath);
+            var schematic = Schematic.DeserializeGrid(filePath);
             Assert.IsTrue(schematic.PartNumbers.Count == 10);
         }
 
@@ -29,7 +29,7 @@ namespace AdventOfCode2023.Tests
         {
             //load sample file 
             var filePath = "../../../../inputs/day3sample.txt";
-            var schematic = DayThreeProcessor.DeserializeGrid(filePath);
+            var schematic = Schematic.DeserializeGrid(filePath);
             Assert.IsTrue(schematic.Symbols.Count == 6);
         }
 
@@ -39,7 +39,7 @@ namespace AdventOfCode2023.Tests
         {
             //load sample file 
             var filePath = "../../../../inputs/day3sample.txt";
-            var schematic = DayThreeProcessor.DeserializeGrid(filePath);
+            var schematic = Schematic.DeserializeGrid(filePath);
 
             Assert.AreEqual(4361, schematic.GetPartNumberSum());
         }
@@ -49,7 +49,7 @@ namespace AdventOfCode2023.Tests
         {
             //load sample file 
             var filePath = "../../../../inputs/day3sample.txt";
-            var schematic = DayThreeProcessor.DeserializeGrid(filePath);
+            var schematic = Schematic.DeserializeGrid(filePath);
             Assert.AreEqual(467835, schematic.GetGearRationSum());
         }
 
@@ -59,7 +59,7 @@ namespace AdventOfCode2023.Tests
         {
             //load sample file 
             var filePath = "../../../../inputs/day3.txt";
-            var schematic = DayThreeProcessor.DeserializeGrid(filePath);
+            var schematic = Schematic.DeserializeGrid(filePath);
             Assert.AreEqual(512794, schematic.GetPartNumberSum());
         }
 
@@ -68,7 +68,7 @@ namespace AdventOfCode2023.Tests
         {
             //load sample file 
             var filePath = "../../../../inputs/day3.txt";
-            var schematic = DayThreeProcessor.DeserializeGrid(filePath);
+            var schematic = Schematic.DeserializeGrid(filePath);
             Assert.AreEqual(67779080, schematic.GetGearRationSum());
         }
 
