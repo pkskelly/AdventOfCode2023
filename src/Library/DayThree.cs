@@ -23,36 +23,16 @@ namespace AdventOfCode2023.Library
 
         public long GetPartNumberSum()
         {
-            //for each SchematicPartNumber, check if a SchematicSymbol is adjacent to it
-            //if so, add the value of the SchematicPartNumber to the sum
-            long sum = 0;
-            if (this.PartNumbers != null && this.Symbols != null)
-            {
-                foreach (var partNumber in this.PartNumbers!)
-                {
-                    foreach (var symbol in this.Symbols!)
-                    {
-                        //if the part number row is the same, above, below the current symbol
-                        if (partNumber.Row == symbol.Row || partNumber.Row - 1 == symbol.Row || partNumber.Row + 1 == symbol.Row )
-                        {
-                            //if (partNumber.Start - 1 == symbol.Position || partNumber.End + 1 == symbol.Position)
-                            
-                            //
-                            if (partNumber.Start == symbol.Position || partNumber.Start - 1 == symbol.Position || partNumber.Start + 1 == symbol.Position)
-                            {
-                                Console.WriteLine($"PartNumber = {partNumber.Value} ... partNumber.Start = {partNumber.Start} symbol.Position = {symbol.Position}");
-                                sum += partNumber.Value;
-                                break;
-                            }
-                             if (partNumber.End == symbol.Position || partNumber.End - 1 == symbol.Position || partNumber.End + 1 == symbol.Position)
-                            {
-                                sum += partNumber.Value; 
-                            }
-                        }
-                    }
-                }  
-            }
-            return sum;
+            if (PartNumbers == null || Symbols == null)
+                return 0;
+
+            return PartNumbers
+                .Where(partNumber => Symbols.Any(symbol =>
+                    (partNumber.Row == symbol.Row || partNumber.Row - 1 == symbol.Row || partNumber.Row + 1 == symbol.Row) &&
+                    (partNumber.Start == symbol.Position || partNumber.Start - 1 == symbol.Position || partNumber.Start + 1 == symbol.Position ||
+                    partNumber.End == symbol.Position || partNumber.End - 1 == symbol.Position || partNumber.End + 1 == symbol.Position)
+                ))
+                .Sum(partNumber => partNumber.Value);
         }
     }
 

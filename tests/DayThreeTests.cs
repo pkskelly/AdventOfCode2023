@@ -44,6 +44,16 @@ namespace AdventOfCode2023.Tests
             Assert.AreEqual(4361, schematic.GetPartNumberSum());
         }
 
+        [TestMethod]
+        public void Grid_Should_Return_CorrectPartNumberSum()
+        {
+            //load sample file 
+            var filePath = "../../../../inputs/day3.txt";
+            var schematic = DayThreeProcessor.DeserializeGrid(filePath);
+
+            Assert.AreEqual(512794, schematic.GetPartNumberSum());
+        }
+
     }
 
 }
