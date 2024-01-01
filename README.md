@@ -18,4 +18,4 @@ Part 2 went pretty quick after figuring out part 1's LINQ.
 
 ## Day 4
 
-Part 1 was a bit tricky, sad to admit but C# really helped here.  Knowing HasSet had Inytersection() was a time saver.
+Part 1 was a bit tricky, sad to admit but C# really helped here.  Knowing HasSet had Intersection() was a time saver.
